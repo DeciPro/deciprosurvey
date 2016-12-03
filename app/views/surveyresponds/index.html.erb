@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Surveyresponds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Info1</th>
+      <th>Info2</th>
+      <th>Arepros</th>
+      <th>Areyou</th>
+      <th>Transparent</th>
+      <th>Remote</th>
+      <th>Alignment</th>
+      <th>Faster</th>
+      <th>Cheaper</th>
+      <th>Discre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @surveyresponds.each do |surveyrespond| %>
+      <tr>
+        <td><%= surveyrespond.info1 %></td>
+        <td><%= surveyrespond.info2 %></td>
+        <td><%= surveyrespond.arepros %></td>
+        <td><%= surveyrespond.areyou %></td>
+        <td><%= surveyrespond.transparent %></td>
+        <td><%= surveyrespond.remote %></td>
+        <td><%= surveyrespond.alignment %></td>
+        <td><%= surveyrespond.faster %></td>
+        <td><%= surveyrespond.cheaper %></td>
+        <td><%= surveyrespond.discre %></td>
+        <td><%= link_to 'Show', surveyrespond %></td>
+        <td><%= link_to 'Edit', edit_surveyrespond_path(surveyrespond) %></td>
+        <td><%= link_to 'Destroy', surveyrespond, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Surveyrespond', new_surveyrespond_path %>

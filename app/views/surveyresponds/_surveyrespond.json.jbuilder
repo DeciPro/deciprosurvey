@@ -1,0 +1,2 @@
+json.extract! surveyrespond, :id, :info1, :info2, :arepros, :areyou, :transparent, :remote, :alignment, :faster, :cheaper, :discre, :created_at, :updated_at
+json.url surveyrespond_url(surveyrespond, format: :json)

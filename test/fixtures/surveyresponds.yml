@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  info1: MyString
+  info2: MyString
+  arepros: 1.5
+  areyou: 1.5
+  transparent: 1.5
+  remote: 1.5
+  alignment: 1.5
+  faster: 1.5
+  cheaper: 1.5
+  discre: 1.5
+
+two:
+  info1: MyString
+  info2: MyString
+  arepros: 1.5
+  areyou: 1.5
+  transparent: 1.5
+  remote: 1.5
+  alignment: 1.5
+  faster: 1.5
+  cheaper: 1.5
+  discre: 1.5

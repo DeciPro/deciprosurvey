@@ -1,0 +1,1 @@
+json.array! @surveyresponds, partial: 'surveyresponds/surveyrespond', as: :surveyrespond

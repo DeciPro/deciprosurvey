@@ -1,0 +1,86 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @survey.name %>
+</p>
+
+<%= form_tag("/infromation", method: "post") do %>
+  <%= label_tag(:q, "Is there a team of professionals in your organization who take critical decisions that severely impact the company's strategy or business??\n") %>
+  <br>
+  <%= radio_button_tag(:IsThere, "IsThereYes") %>
+  <%= label_tag(:IsThere_Yes, "Yes") %>
+  <%= radio_button_tag(:IsThere, "IsThereYesNo") %>
+  <%= label_tag(:IsThere_No, "No") %>
+
+  <br>
+  <%= label_tag(:q, "If yes are you a part of the team?\n") %>
+  <br>
+  <%= radio_button_tag(:AreYou, "AreyouYes") %>
+  <%= label_tag(:AreyouYes, "Yes") %>
+  <%= radio_button_tag(:AreYou, "AreyouNo") %>
+  <%= label_tag(:AreyouNo, "No") %>
+
+  <br>
+  <%= label_tag(:q, "Are you aware of some cases when some members of the team were not completely clear about why a certain decision was taken??\n") %>
+  <br>
+  <%= radio_button_tag(:AwareCLear, "ClearAwareYes") %>
+  <%= label_tag(:ClearAwareYes, "Yes") %>
+  <%= radio_button_tag(:AwareCLear, "ClearAwareMaybe") %>
+  <%= label_tag(:ClearAwareMaybe, "Maybe") %>
+  <%= radio_button_tag(:AwareCLear, "ClearAwareNo") %>
+  <%= label_tag(:ClearAwareYes, "No") %>
+
+  <br>
+  <%= label_tag(:q, "Do you think it may be a better idea to have your decion making process remote and parallel with production indpendent of the location?\n") %>
+  <br>
+  <%= radio_button_tag(:Parallel, "ParallelYes") %>
+  <%= label_tag(:ParallelYes, "Yes") %>
+  <%= radio_button_tag(:Parallel, "ParallelMaybe") %>
+  <%= label_tag(:ParallelMaybe, "Maybe") %>
+  <%= radio_button_tag(:Parallel, "ParallelNo") %>
+  <%= label_tag(:ParallelNo, "No") %>
+
+  <br>
+  <%= label_tag(:q, " Do you think there is a need to improve the alignment of the decision making team to the company's vision?\n") %>
+  <br>
+  <%= radio_button_tag(:Vision, "VisionYes") %>
+  <%= label_tag(:VisionYes, "Yes") %>
+  <%= radio_button_tag(:Vision, "VisionMaybe") %>
+  <%= label_tag(:VisionMaybe, "Maybe") %>
+  <%= radio_button_tag(:Vision, "VisionNo") %>
+  <%= label_tag(:VisionNo, "No") %>
+
+  <br>
+  <%= label_tag(:q, " Do you think your company's decsion-making processes can be faster?\n") %>
+  <br>
+  <%= radio_button_tag(:Faster, "FasterYes") %>
+  <%= label_tag(:FasterYes, "Yes") %>
+  <%= radio_button_tag(:Faster, "FasterMaybe") %>
+  <%= label_tag(:FasterMaybe, "Maybe") %>
+  <%= radio_button_tag(:Faster, "FasterNo") %>
+  <%= label_tag(:FasterNo, "No") %>
+
+  <br>
+  <%= label_tag(:q, " Do you think the decision-making processes can be made cheaper?\n") %>
+  <br>
+  <%= radio_button_tag(:Cheaper, "CheaperYes") %>
+  <%= label_tag(:CheaperYes, "Yes") %>
+  <%= radio_button_tag(:Cheaper, "CheaperMaybe") %>
+  <%= label_tag(:CheaperMaybe, "Maybe") %>
+  <%= radio_button_tag(:Cheaper, "CheaperNo") %>
+  <%= label_tag(:CheaperNo, "No") %>
+
+  <br>
+  <%= label_tag(:q, " Is the decision making team is sometimes having discrepencies within the team?\n") %>
+  <br>
+  <%= radio_button_tag(:Cheaper, "CheaperYes") %>
+  <%= label_tag(:CheaperYes, "Yes") %>
+  <%= radio_button_tag(:Cheaper, "CheaperMaybe") %>
+  <%= label_tag(:CheaperMaybe, "Maybe") %>
+  <%= radio_button_tag(:Cheaper, "CheaperNo") %>
+  <%= label_tag(:CheaperNo, "No") %>
+<% end %>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

@@ -1,0 +1,1 @@
+json.partial! "surveyresponds/surveyrespond", surveyrespond: @surveyrespond
