@@ -1,18 +1,18 @@
 
 
-
+<div class="inner-div">
 <%= form_tag('/surveyresponds') do -%>
 <%= label_tag(:q, "What kind of business is your company into?\n") %>
 <br>
 <%= select_tag(:typeBusiness, options_for_select([['Construction', 1],['IT', 2],['Law', 3],['Consultancy', 4]])) %>
-
+<br>
 <br>
 <%= label_tag(:q, "What is your role in the company?\n") %>
 <br>
 <%= select_tag(:typeRole, options_for_select([['CEO/Shareholder', 1],['Management', 2],['Operations Management(Technical/Marketing)', 3],['Operations Team member(Technical/Marketing)', 4], ['Other', 5]])) %>
 
 <br>
-
+<br>
 <%= label_tag(:q, "Is there a team of professionals in your organization who take critical decisions that severely impact the company's strategy or business??\n") %>
 <br>
 <%= radio_button_tag(:IsThere, "IsThereYes") %>
@@ -21,6 +21,7 @@
 <%= label_tag(:IsThere_No, "No") %>
 
 <br>
+<br>
 <%= label_tag(:q, "If yes are you a part of the team?\n") %>
 <br>
 <%= radio_button_tag(:AreYou, "AreyouYes") %>
@@ -28,6 +29,7 @@
 <%= radio_button_tag(:AreYou, "AreyouNo") %>
 <%= label_tag(:AreyouNo, "No") %>
 
+<br>
 <br>
 <%= label_tag(:q, "Are you aware of some cases when some members of the team were not completely clear about why a certain decision was taken??\n") %>
 <br>
@@ -39,6 +41,7 @@
 <%= label_tag(:ClearAwareYes, "No") %>
 
 <br>
+<br>
 <%= label_tag(:q, "Do you think it may be a better idea to have your decion making process remote and parallel with production indpendent of the location?\n") %>
 <br>
 <%= radio_button_tag(:Parallel, "ParallelYes") %>
@@ -48,6 +51,7 @@
 <%= radio_button_tag(:Parallel, "ParallelNo") %>
 <%= label_tag(:ParallelNo, "No") %>
 
+<br>
 <br>
 <%= label_tag(:q, " Do you think there is a need to improve the alignment of the decision making team to the company's vision?\n") %>
 <br>
@@ -59,6 +63,7 @@
 <%= label_tag(:VisionNo, "No") %>
 
 <br>
+<br>
 <%= label_tag(:q, " Do you think your company's decsion-making processes can be faster?\n") %>
 <br>
 <%= radio_button_tag(:Faster, "FasterYes") %>
@@ -68,6 +73,7 @@
 <%= radio_button_tag(:Faster, "FasterNo") %>
 <%= label_tag(:FasterNo, "No") %>
 
+<br>
 <br>
 <%= label_tag(:q, " Do you think the decision-making processes can be made cheaper?\n") %>
 <br>
@@ -79,6 +85,7 @@
 <%= label_tag(:CheaperNo, "No") %>
 
 <br>
+<br>
 <%= label_tag(:q, " Is the decision making team is sometimes having discrepencies within the team?\n") %>
 <br>
 <%= radio_button_tag(:Discrepencies, "DiscrepenciesYes") %>
@@ -88,7 +95,10 @@
 <%= radio_button_tag(:Discrepencies, "DiscrepenciesNo") %>
 <%= label_tag(:DiscrepenciesNo, "No") %>
 
-
-  <div><%= submit_tag 'Save' %></div>
+<br>
+<br>
+<br>
+  <div id="save"><%= submit_tag 'Save' %></div>
 
 <% end -%>
+</div>
