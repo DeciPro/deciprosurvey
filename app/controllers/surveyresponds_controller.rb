@@ -25,8 +25,16 @@ class SurveyrespondsController < ApplicationController
   # POST /surveyresponds.json
   def create
     @surveyrespond = Surveyrespond.new
-    @surveyrespond.info1 = "abcd"
-    @surveyrespond.info2 = "xyz";
+    @surveyrespond.info1 = params[:typeBusiness].to_s
+    @surveyrespond.info2 = params[:typeRole].to_s
+
+    @LandingPages10 = Array.new
+    @LandingPages05 = Array.new
+    @LandingPages = Array.new
+    @LandingPages.push('http://decipro.cs.ovgu.de/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/cv2')
+    @LandingPages.push('http://decipro.cs.ovgu.de/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/')
 
     # Is there a professional team taking decisions?
     if (params[:IsThere].to_s == "IsThereYes")
@@ -45,6 +53,7 @@ class SurveyrespondsController < ApplicationController
     # Transparency?
     if (params[:AwareCLear].to_s == "ClearAwareYes")
       @surveyrespond.transparent = 1.0
+
     elsif (params[:AwareCLear].to_s == "ClearAwareMaybe")
       @surveyrespond.transparent = 0.5
     elsif (params[:AwareCLear].to_s == "ClearAwareNo")
@@ -69,21 +78,14 @@ class SurveyrespondsController < ApplicationController
       @surveyrespond.alignment = 0.0
     end
 
-    #Faster
-    if (params[:Faster].to_s == "FasterYes")
-      @surveyrespond.faster = 1.0
-    elsif (params[:Faster].to_s == "FasterMaybe")
-      @surveyrespond.faster = 0.5
-    elsif (params[:Faster].to_s == "FasterNo")
-      @surveyrespond.faster = 0.0
-    end
+
 
     #Cheaper
-    if (params[:Cheaper].to_s == "CheaperYes")
+    if (params[:Certain].to_s == "CertainYes")
       @surveyrespond.cheaper = 1.0
-    elsif (params[:Cheaper].to_s == "CheaperMaybe")
+    elsif (params[:Certain].to_s == "CertainMaybe")
       @surveyrespond.cheaper = 0.5
-    elsif (params[:Cheaper].to_s == "CheaperNo")
+    elsif (params[:Certain].to_s == "CertainNo")
       @surveyrespond.cheaper = 0.0
     end
 
@@ -97,19 +99,19 @@ class SurveyrespondsController < ApplicationController
     end
 
 
-    @LandingPages10 = Array.new
-    @LandingPages05 = Array.new
-
-    @LandingPages10.push('https://www.google.com')
-
     if(@LandingPages10.count > 0)
-        @LandingPage = @LandingPages10[0] # random
+        @LandingPage = @LandingPages10.sample # random
+      elsif (@LandingPages05.count > 0)
+          @LandingPage = @LandingPages05.sample # random
+      else
+        @LandingPage = @LandingPages.sample
+
       end
 
     respond_to do |format|
       if @surveyrespond.save
 
-        format.html { redirect_to @surveyrespond }
+        format.html { redirect_to @LandingPage }
         format.json { render :show, status: :created, location: @surveyrespond }
       else
         format.html { render :new }
