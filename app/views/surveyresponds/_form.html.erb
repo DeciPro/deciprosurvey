@@ -2,14 +2,13 @@
 
 <div class="inner-div">
 <%= form_tag('/surveyresponds') do -%>
-<<<<<<< HEAD
+
 <%= label_tag(:q, "What kind of business is your company into?\n") %>
 <br>
 <%= select_tag(:typeBusiness, options_for_select([['Construction', 1],['IT', 2],['Law', 3],['Consultancy', 4]])) %>
 <br>
-=======
 
->>>>>>> 1c786962f90cb16d96df21333455c1c3032e7543
+
 <br>
 <%= label_tag(:q, "What is your role in the company?\n") %>
 <br>
@@ -34,12 +33,9 @@
 <%= label_tag(:AreyouNo, "No") %>
 
 <br>
-<<<<<<< HEAD
 <br>
 <%= label_tag(:q, "Are you aware of some cases when some members of the team were not completely clear about why a certain decision was taken??\n") %>
-=======
 <%= label_tag(:q, "Do you agree that professional teams often do not understand all the team member's viewpoints while taking a decision?\n") %>
->>>>>>> 1c786962f90cb16d96df21333455c1c3032e7543
 <br>
 <%= radio_button_tag(:AwareCLear, "ClearAwareYes") %>
 <%= label_tag(:ClearAwareYes, "Yes") %>
@@ -49,12 +45,9 @@
 <%= label_tag(:ClearAwareYes, "No") %>
 
 <br>
-<<<<<<< HEAD
 <br>
 <%= label_tag(:q, "Do you think it may be a better idea to have your decion making process remote and parallel with production indpendent of the location?\n") %>
-=======
 <%= label_tag(:q, "Have you ever felt slightly uncertain about your team's decison?\n") %>
->>>>>>> 1c786962f90cb16d96df21333455c1c3032e7543
 <br>
 <%= radio_button_tag(:Certain, "CertainYes") %>
 <%= label_tag(:CertainYes, "Yes") %>
@@ -64,12 +57,9 @@
 <%= label_tag(:CertainNo, "No") %>
 
 <br>
-<<<<<<< HEAD
 <br>
 <%= label_tag(:q, " Do you think there is a need to improve the alignment of the decision making team to the company's vision?\n") %>
-=======
 <%= label_tag(:q, "Do you agree that a lot of teams lack in consensus and alighment in their decion making?\n") %>
->>>>>>> 1c786962f90cb16d96df21333455c1c3032e7543
 <br>
 <%= radio_button_tag(:Vision, "VisionYes") %>
 <%= label_tag(:VisionYes, "Yes") %>
@@ -78,7 +68,6 @@
 <%= radio_button_tag(:Vision, "VisionNo") %>
 <%= label_tag(:VisionNo, "No") %>
 
-<<<<<<< HEAD
 <br>
 <br>
 <%= label_tag(:q, " Do you think your company's decsion-making processes can be faster?\n") %>
@@ -104,11 +93,9 @@
 <br>
 <br>
 <%= label_tag(:q, " Is the decision making team is sometimes having discrepencies within the team?\n") %>
-=======
 
 <br>
 <%= label_tag(:q, " Do you agree that team members often find it hard to resolve discrepencies/disagreements when taking team decision?\n") %>
->>>>>>> 1c786962f90cb16d96df21333455c1c3032e7543
 <br>
 <%= radio_button_tag(:Discrepencies, "DiscrepenciesYes") %>
 <%= label_tag(:DiscrepenciesYes, "Yes") %>
@@ -118,11 +105,8 @@
 <%= label_tag(:DiscrepenciesNo, "No") %>
 
 <br>
-<<<<<<< HEAD
 <br>
 <br>
-  <div id="save"><%= submit_tag 'Save' %></div>
-=======
 <%= label_tag(:q, " Do you agree that it is sometimes difficult to organize team meetings due to the non-availability of some important members?\n") %>
 <br>
 <%= radio_button_tag(:Parallel, "ParallelYes") %>
@@ -134,8 +118,7 @@
 
 
 
-  <div><%= submit_tag 'Save' %></div>
->>>>>>> 1c786962f90cb16d96df21333455c1c3032e7543
+  <div id="save"><%= submit_tag 'Save' %></div>
 
 <% end -%>
 </div>
