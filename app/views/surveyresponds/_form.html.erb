@@ -2,14 +2,11 @@
 
 
 <%= form_tag('/surveyresponds') do -%>
-<%= label_tag(:q, "What kind of business is your company into?\n") %>
-<br>
-<%= select_tag(:typeBusiness, options_for_select([['Construction', 1],['IT', 2],['Law', 3],['Consultancy', 4]])) %>
 
 <br>
 <%= label_tag(:q, "What is your role in the company?\n") %>
 <br>
-<%= select_tag(:typeRole, options_for_select([['CEO/Shareholder', 1],['Management', 2],['Operations Management(Technical/Marketing)', 3],['Operations Team member(Technical/Marketing)', 4], ['Other', 5]])) %>
+<%= select_tag(:typeRole, options_for_select([['CEO/BoardMember', 1],['Management', 2],['Operations Management(Technical/Marketing)', 3],['Operations Team member(Technical/Marketing)', 4], ['Other', 5]])) %>
 
 <br>
 
@@ -29,7 +26,7 @@
 <%= label_tag(:AreyouNo, "No") %>
 
 <br>
-<%= label_tag(:q, "Are you aware of some cases when some members of the team were not completely clear about why a certain decision was taken??\n") %>
+<%= label_tag(:q, "Do you agree that professional teams often do not understand all the team member's viewpoints while taking a decision?\n") %>
 <br>
 <%= radio_button_tag(:AwareCLear, "ClearAwareYes") %>
 <%= label_tag(:ClearAwareYes, "Yes") %>
@@ -39,17 +36,17 @@
 <%= label_tag(:ClearAwareYes, "No") %>
 
 <br>
-<%= label_tag(:q, "Do you think it may be a better idea to have your decion making process remote and parallel with production indpendent of the location?\n") %>
+<%= label_tag(:q, "Have you ever felt slightly uncertain about your team's decison?\n") %>
 <br>
-<%= radio_button_tag(:Parallel, "ParallelYes") %>
-<%= label_tag(:ParallelYes, "Yes") %>
-<%= radio_button_tag(:Parallel, "ParallelMaybe") %>
-<%= label_tag(:ParallelMaybe, "Maybe") %>
-<%= radio_button_tag(:Parallel, "ParallelNo") %>
-<%= label_tag(:ParallelNo, "No") %>
+<%= radio_button_tag(:Certain, "CertainYes") %>
+<%= label_tag(:CertainYes, "Yes") %>
+<%= radio_button_tag(:Certain, "CertainMaybe") %>
+<%= label_tag(:CertainMaybe, "Maybe") %>
+<%= radio_button_tag(:Certain, "CertainNo") %>
+<%= label_tag(:CertainNo, "No") %>
 
 <br>
-<%= label_tag(:q, " Do you think there is a need to improve the alignment of the decision making team to the company's vision?\n") %>
+<%= label_tag(:q, "Do you agree that a lot of teams lack in consensus and alighment in their decion making?\n") %>
 <br>
 <%= radio_button_tag(:Vision, "VisionYes") %>
 <%= label_tag(:VisionYes, "Yes") %>
@@ -58,28 +55,9 @@
 <%= radio_button_tag(:Vision, "VisionNo") %>
 <%= label_tag(:VisionNo, "No") %>
 
-<br>
-<%= label_tag(:q, " Do you think your company's decsion-making processes can be faster?\n") %>
-<br>
-<%= radio_button_tag(:Faster, "FasterYes") %>
-<%= label_tag(:FasterYes, "Yes") %>
-<%= radio_button_tag(:Faster, "FasterMaybe") %>
-<%= label_tag(:FasterMaybe, "Maybe") %>
-<%= radio_button_tag(:Faster, "FasterNo") %>
-<%= label_tag(:FasterNo, "No") %>
 
 <br>
-<%= label_tag(:q, " Do you think the decision-making processes can be made cheaper?\n") %>
-<br>
-<%= radio_button_tag(:Cheaper, "CheaperYes") %>
-<%= label_tag(:CheaperYes, "Yes") %>
-<%= radio_button_tag(:Cheaper, "CheaperMaybe") %>
-<%= label_tag(:CheaperMaybe, "Maybe") %>
-<%= radio_button_tag(:Cheaper, "CheaperNo") %>
-<%= label_tag(:CheaperNo, "No") %>
-
-<br>
-<%= label_tag(:q, " Is the decision making team is sometimes having discrepencies within the team?\n") %>
+<%= label_tag(:q, " Do you agree that team members often find it hard to resolve discrepencies/disagreements when taking team decision?\n") %>
 <br>
 <%= radio_button_tag(:Discrepencies, "DiscrepenciesYes") %>
 <%= label_tag(:DiscrepenciesYes, "Yes") %>
@@ -87,6 +65,17 @@
 <%= label_tag(:DiscrepenciesMaybe, "Maybe") %>
 <%= radio_button_tag(:Discrepencies, "DiscrepenciesNo") %>
 <%= label_tag(:DiscrepenciesNo, "No") %>
+
+<br>
+<%= label_tag(:q, " Do you agree that it is sometimes difficult to organize team meetings due to the non-availability of some important members?\n") %>
+<br>
+<%= radio_button_tag(:Parallel, "ParallelYes") %>
+<%= label_tag(:ParallelYes, "Yes") %>
+<%= radio_button_tag(:Parallel, "ParallelMaybe") %>
+<%= label_tag(:ParallelMaybe, "Maybe") %>
+<%= radio_button_tag(:Parallel, "ParallelNo") %>
+<%= label_tag(:ParallelNo, "No") %>
+
 
 
   <div><%= submit_tag 'Save' %></div>
