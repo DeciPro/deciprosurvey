@@ -31,10 +31,12 @@ class SurveyrespondsController < ApplicationController
     @LandingPages10 = Array.new
     @LandingPages05 = Array.new
     @LandingPages = Array.new
-    @LandingPages.push('http://decipro.cs.ovgu.de/')
-    @LandingPages.push('http://decipro.cs.ovgu.de/cv2')
-    @LandingPages.push('http://decipro.cs.ovgu.de/')
-    @LandingPages.push('http://decipro.cs.ovgu.de/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/gain_insights/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/transparency/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/remotely/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/alignment_consensus/')
+    @LandingPages.push('http://decipro.cs.ovgu.de/resolve-discrepancies/')
+
 
     # Is there a professional team taking decisions?
     if (params[:IsThere].to_s == "IsThereYes")
@@ -53,9 +55,10 @@ class SurveyrespondsController < ApplicationController
     # Transparency?
     if (params[:AwareCLear].to_s == "ClearAwareYes")
       @surveyrespond.transparent = 1.0
-
+      @LandingPages10.push('http://decipro.cs.ovgu.de/transparency/')
     elsif (params[:AwareCLear].to_s == "ClearAwareMaybe")
       @surveyrespond.transparent = 0.5
+      @LandingPages05.push('http://decipro.cs.ovgu.de/transparency/')
     elsif (params[:AwareCLear].to_s == "ClearAwareNo")
       @surveyrespond.transparent = 0.0
     end
@@ -63,8 +66,10 @@ class SurveyrespondsController < ApplicationController
     # Parallel and Remote
     if (params[:Parallel].to_s == "ParallelYes")
       @surveyrespond.remote = 1.0
+        @LandingPages10.push('http://decipro.cs.ovgu.de/remotely/')
     elsif (params[:Parallel].to_s == "ParallelMaybe")
       @surveyrespond.remote = 0.5
+      @LandingPages05.push('http://decipro.cs.ovgu.de/remotely/')
     elsif (params[:Parallel].to_s == "ParallelNo")
       @surveyrespond.remote = 0.0
     end
@@ -72,19 +77,23 @@ class SurveyrespondsController < ApplicationController
     # Aligned to vision?
     if (params[:Vision].to_s == "VisionYes")
       @surveyrespond.alignment = 1.0
+        @LandingPages10.push('http://decipro.cs.ovgu.de/alignment_consensus/')
     elsif (params[:Vision].to_s == "VisionMaybe")
       @surveyrespond.alignment = 0.5
+      @LandingPages05.push('http://decipro.cs.ovgu.de/alignment_consensus/')
     elsif (params[:Vision].to_s == "VisionNo")
       @surveyrespond.alignment = 0.0
     end
 
 
 
-    #Cheaper
+    #Certain
     if (params[:Certain].to_s == "CertainYes")
       @surveyrespond.cheaper = 1.0
+        @LandingPages10.push('http://decipro.cs.ovgu.de/gain_insights/')
     elsif (params[:Certain].to_s == "CertainMaybe")
       @surveyrespond.cheaper = 0.5
+      @LandingPages05.push('http://decipro.cs.ovgu.de/gain_insights/')
     elsif (params[:Certain].to_s == "CertainNo")
       @surveyrespond.cheaper = 0.0
     end
@@ -92,8 +101,10 @@ class SurveyrespondsController < ApplicationController
     #Discrepencies
     if (params[:Discrepencies].to_s == "DiscrepenciesYes")
       @surveyrespond.discre = 1.0
+      @LandingPages10.push('http://decipro.cs.ovgu.de/resolve-discrepancies/')
     elsif (params[:Discrepencies].to_s == "DiscrepenciesYes")
       @surveyrespond.discre = 0.5
+      @LandingPages05.push('http://decipro.cs.ovgu.de/resolve-discrepancies/')
     elsif (params[:Discrepencies].to_s == "DiscrepenciesYes")
       @surveyrespond.discre = 0.0
     end

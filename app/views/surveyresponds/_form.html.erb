@@ -3,10 +3,7 @@
 <div class="inner-div">
 <%= form_tag('/surveyresponds') do -%>
 
-<%= label_tag(:q, "What kind of business is your company into?\n") %>
-<br>
-<%= select_tag(:typeBusiness, options_for_select([['Construction', 1],['IT', 2],['Law', 3],['Consultancy', 4]])) %>
-<br>
+
 
 
 <br>
@@ -34,7 +31,6 @@
 
 <br>
 <br>
-<%= label_tag(:q, "Are you aware of some cases when some members of the team were not completely clear about why a certain decision was taken??\n") %>
 <%= label_tag(:q, "Do you agree that professional teams often do not understand all the team member's viewpoints while taking a decision?\n") %>
 <br>
 <%= radio_button_tag(:AwareCLear, "ClearAwareYes") %>
@@ -46,7 +42,7 @@
 
 <br>
 <br>
-<%= label_tag(:q, "Do you think it may be a better idea to have your decion making process remote and parallel with production indpendent of the location?\n") %>
+
 <%= label_tag(:q, "Have you ever felt slightly uncertain about your team's decison?\n") %>
 <br>
 <%= radio_button_tag(:Certain, "CertainYes") %>
@@ -58,7 +54,6 @@
 
 <br>
 <br>
-<%= label_tag(:q, " Do you think there is a need to improve the alignment of the decision making team to the company's vision?\n") %>
 <%= label_tag(:q, "Do you agree that a lot of teams lack in consensus and alighment in their decion making?\n") %>
 <br>
 <%= radio_button_tag(:Vision, "VisionYes") %>
@@ -68,16 +63,7 @@
 <%= radio_button_tag(:Vision, "VisionNo") %>
 <%= label_tag(:VisionNo, "No") %>
 
-<br>
-<br>
-<%= label_tag(:q, " Do you think your company's decsion-making processes can be faster?\n") %>
-<br>
-<%= radio_button_tag(:Faster, "FasterYes") %>
-<%= label_tag(:FasterYes, "Yes") %>
-<%= radio_button_tag(:Faster, "FasterMaybe") %>
-<%= label_tag(:FasterMaybe, "Maybe") %>
-<%= radio_button_tag(:Faster, "FasterNo") %>
-<%= label_tag(:FasterNo, "No") %>
+
 
 <br>
 <br>
