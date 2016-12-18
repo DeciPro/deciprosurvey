@@ -1,5 +1,5 @@
 class SurveyrespondsController < ApplicationController
-  before_action :set_surveyrespond, only: [:show, :edit, :update, :destroy]
+  before_action :set_surveyrespond, only: [:edit, :update, :destroy]
 
   # GET /surveyresponds
   # GET /surveyresponds.json
@@ -120,14 +120,14 @@ class SurveyrespondsController < ApplicationController
       end
 
       if (params[:add])
-        @LandingPage = 'https://www.google.com'
+        @LandingPage = @surveyrespond
       end
 
     respond_to do |format|
       if @surveyrespond.save
 
         if (params[:add])
-          format.html { redirect_to 'https://www.google.com' }
+          format.html { redirect_to @surveyrespond }
         else
 
         format.html { redirect_to @LandingPage }

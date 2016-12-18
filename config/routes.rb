@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'surveyresponds#new'
+
+  get    '/Thank_You',   to: 'surveyresponds#show', as: :surveyrespond
+
   resources :surveyresponds
   resources :surveys
   # The priority is based upon order of creation: first created -> highest priority.
