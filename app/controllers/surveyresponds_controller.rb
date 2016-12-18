@@ -119,11 +119,20 @@ class SurveyrespondsController < ApplicationController
 
       end
 
+      if (params[:add])
+        @LandingPage = 'https://www.google.com'
+      end
+
     respond_to do |format|
       if @surveyrespond.save
 
+        if (params[:add])
+          format.html { redirect_to 'https://www.google.com' }
+        else
+
         format.html { redirect_to @LandingPage }
         format.json { render :show, status: :created, location: @surveyrespond }
+      end
       else
         format.html { render :new }
         format.json { render json: @surveyrespond.errors, status: :unprocessable_entity }
